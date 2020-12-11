@@ -57,7 +57,7 @@ You can install Conda for python which resolves all the dependencies for machine
 <h3>Pre-trained Model</h3>
 
 The Pre-trained Model can be found here <a href="https://drive.google.com/drive/folders/133RyXB-OSqB7YozcSb8FTYB8bBisjOPj?usp=sharing">Pre-trained Model</a>.
-extract the zip file into the 'master folder' of your model. And, finally run 'test.py' to obtaining accuracy on 'test set'.
+Extract the zip file into the 'master folder' of your model. And, finally run 'test.py' to obtaining accuracy on 'test set'.
 
 ### Contributors
 
