@@ -58,6 +58,7 @@ You can install Conda for python which resolves all the dependencies for machine
 ##### 1) [Sahma Anwar](https://github.com/Sahma61)
 ##### 2) [Onkar Telange](https://github.com/om1621)
 ##### 3) [Shreyansh Sahu](https://github.com/23nobody)
+##### 4) [Rahul Thalor](https://github.com/RahulThalor)
 
 <a name="References"/>
 <h3>References</h3>
