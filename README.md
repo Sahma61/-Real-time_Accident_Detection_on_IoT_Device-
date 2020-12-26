@@ -6,32 +6,33 @@
 <h4>Table of Contents</h4>
 
 [Summary](#Summary)<br /> 
-[Dataset Creation](#Data)<br />
+[Dataset Generation](#Data)<br />
 [Data Processing](#Data_processing)<br />
-[The Algorithm](#Model)<br />
+[Model Training](#Model)<br />
+[Pre-trained Model](#Pre-trained)<br />
 [References](#References)<br />
 
 <a name="Summary"/>
 <h3>Summary</h3>
 
-The Convolutional neural network algorithm model has created to detect accidents in video footages captured by IOT devices
+The model implements CNN(Convolutional Neural Network)-based learning on accident footages captured through traffic cameras. The model aims to detect Real-time Accident via an IoT-based traffic camera.
 <br /><br />
 
 <a name="Data"/>
-<h3>Dataset Creation</h3>
+<h3>Dataset Generation</h3>
 
-For the dataset creation purpose we used the CADP Dataset which conatains the accident videos and DETRAC dataset which is mainly used for the vehicular detection 
-as our non-accident videos. When we converted the CADP videos into frames (using frame_cutter.py), we found that most of the frames like frames before accident have no accident visible in them so after converting all the videos in frames we manually separated the frames with accidents. By doing this we were able to get 4000 images with accidents and similary, we got 8000 images from DETRAC dataset. So we created a dataset containing 12000 accident and non-accident images. We have uploaded the dataset to google drive and link for the same is given below.
+For the dataset generation, We use the CADP Dataset which comprises a collection of accident videos and DETRAC dataset containing footages of normal traffic flow.
+Initially, we supposedly marked the 'CADP' as an Accident Dataset and 'DETRAC' as a non-accident set. Since the CNN model ought be applied on images, rather than videos, we converted the video footages into images(using frame_cutter.py). Training on this 'Crude Dataset', the initial training and validation error was significant, partly due to the large number of 'False Negative' in the 'Accident Dataset'. In order to overcome this, we manually removed the false negatives from 'Accident Dataset'. Finally, we obtained the final 'Compact Dataset' with 4000 accident images from 'Accident Dataset' and 8000 images from 'Non-accident Dataset' (12000 images overall). The 'Compact Dataset' can be found here <a href="https://drive.google.com/drive/folders/1oR_e3g257MnhEOiNJbk3lLoPmkxSWNE8?usp=sharing">Compact Dataset</a>. In the next section, we describe the Data Preprocessing employed before training the model.
 <br /><br />
 
 <a name="Data_processing"/>
 <h3>Data Processing</h3>
 
-We converted each video into its individual frames. Each of these images is a two-dimensional array of pixels where each pixel has information about the red, green, and blue (RGB) color levels. To reduce the dimensionality at the individual image level, we convert the 3-D RGB color arrays to grayscale. Additionally, to make the computations more tractable on a CPU, we resize each image to (128, 128) - in effect reducing the size of each image to a 2-D array of 122 X 128.
+We converted each video frame into an image. Each of these images is a two-dimensional array of pixels, where each pixel has information about the red, green, and blue (RGB) color levels. To reduce the dimensionality at the individual image level, we convert the 3-D RGB color arrays to grayscale. Additionally, to make the computations more tractable on a CPU, we resize each image to (128, 128) - in effect reducing the size of each image to a 2-D array of 122 X 128.
 <br /><br />
 
 <a name="Model"/>
-<h3>The Algorithm</h3>
+<h3>Model Training</h3>
 
 We built a convolutional neural network for image classification with keras.
 
@@ -52,6 +53,11 @@ You can install Conda for python which resolves all the dependencies for machine
 2) Then run `main.py` to train the model.
 3) Finally, run `model.py` for testing your model.
 
+<a name="Pre-trained"/>
+<h3>Pre-trained Model</h3>
+
+The Pre-trained Model can be found here <a href="https://drive.google.com/drive/folders/133RyXB-OSqB7YozcSb8FTYB8bBisjOPj?usp=sharing">Pre-trained Model</a>.
+Extract the zip file into the 'master folder' of your model. And, finally run 'test.py' to obtaining accuracy on 'test set'.
 
 ### Contributors
 
@@ -66,7 +72,7 @@ You can install Conda for python which resolves all the dependencies for machine
 <ul>
 <li> <a href="https://ankitshah009.github.io/accident_forecasting_traffic_camera">CADP Dataset</a>
 <li> <a href="http://detrac-db.rit.albany.edu/">DETRAC Dataset</a>
-<li> <a href="#">Manually Created Dataset</a>
+<li> <a href="https://drive.google.com/drive/folders/1oR_e3g257MnhEOiNJbk3lLoPmkxSWNE8?usp=sharing">Manually Created Dataset</a>
 
 </ul>
 
